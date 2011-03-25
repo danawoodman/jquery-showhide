@@ -2,10 +2,10 @@
 
 A robust "toggle" plugin for jQuery. Features include the use of cookies, toggling of text and more.
 
-    * Remember the state of the target object in a cookie.
-    * Change the text of the toggle element (useful if you want the link text to change, e.g. "Show form"/"Hide form").
-    * Apply classes to the toggle element to give it plus/minus classes.
-    * Auto focus on a form element within the target element (useful if you are showing a hidden form). 
+- Remember the state of the target object in a cookie.
+- Change the text of the toggle element (useful if you want the link text to change, e.g. "Show form"/"Hide form").
+- Apply classes to the toggle element to give it plus/minus classes.
+- Auto focus on a form element within the target element (useful if you are showing a hidden form). 
 
 To see what you can do with this plugin, check out this short video (no audio) of a (very) simple example usage:
 
