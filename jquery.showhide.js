@@ -10,27 +10,29 @@
         // Compile default options and user specified options.
         var opts = $.extend({}, $.fn.showhide.defaults, options);
         
-        return $(this).each(function() {
+        return this.each(function() {
             
-            var obj = $(this);
+            var $obj = $(this);
             
             // Build element specific options.
-            obj.o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+            $obj.o = $.meta ? $.extend({}, opts, $this.data()) : opts;
             
             // If there is a custom target object, use that, if not, use ".next()"
-            if (obj.o.target_obj) {
-                obj.o.target = eval(obj.o.target_obj); // Turns the string into executable JavaScript code.
+            if ($obj.o.target_obj) {
+                $obj.o.target = eval($obj.o.target_obj); // Turns the string into executable JavaScript code.
             } else {
-                obj.o.target = obj.next();
+                $obj.o.target = $obj.next();
             };
             
             // Set expiration of cookie, if it exists.
-            if (obj.o.cookie_expires) {
-                obj.o.cookie_options = {expires: obj.o.cookie_expires};
-            }
+            if ($obj.o.cookie_expires) {
+                $obj.o.cookie_options = {
+                    expires: $obj.o.cookie_expires
+                };
+            };
             
             // Show function.
-            show = function(object) {
+            var show = function (object) {
                 object.removeClass(object.o.plus_class);
                 object.addClass(object.o.minus_class);
                 if (object.o.minus_text) {
@@ -41,13 +43,13 @@
                 if (object.o.use_cookie) {
                     $.cookie(object.o.cookie_name, 'visible', object.o.cookie_options);
                 };
-                if (obj.o.focus_target) {
-                    obj.o.focus_target.focus();
+                if ($obj.o.focus_target) {
+                    $obj.o.focus_target.focus();
                 };
             };
             
             // Hide function.
-            hide = function(object) {
+            var hide = function (object) {
                 object.removeClass(object.o.minus_class);
                 object.addClass(object.o.plus_class);
                 if (object.o.plus_text) {
@@ -61,26 +63,26 @@
             };
             
             // Using cookies.
-            if (obj.o.use_cookie) {
+            if ($obj.o.use_cookie) {
                 
                 // Check for cookie. If set, set default state.
-                if ($.cookie(obj.o.cookie_name)) {
-                    if ($.cookie(obj.o.cookie_name) == 'visible') {
-                        show(obj);
+                if ($.cookie($obj.o.cookie_name)) {
+                    if ($.cookie($obj.o.cookie_name) === 'visible') {
+                        show($obj);
                     }
-                    else if ($.cookie(obj.o.cookie_name) == 'hidden') {
-                        hide(obj);
+                    else if ($.cookie($obj.o.cookie_name) === 'hidden') {
+                        hide($obj);
                     }
                     
                     // Shouldn't get here. If it does, set value to default.
                     else {
-                        $.cookie(obj.o.cookie_name, obj.o.cookie_value);
-                        if ($.cookie(obj.o.cookie_name) == 'visible') {
-                            show(obj);
+                        $.cookie($obj.o.cookie_name, $obj.o.cookie_value);
+                        if ($.cookie($obj.o.cookie_name) === 'visible') {
+                            show($obj);
                             
                         }
-                        else if ($.cookie(obj.o.cookie_name) == 'hidden') {
-                            hide(obj);
+                        else if ($.cookie($obj.o.cookie_name) === 'hidden') {
+                            hide($obj);
                             
                         }
                     };
@@ -88,23 +90,23 @@
                 
                 // If no cookie, set default state by setting.
                 else {
-                    $.cookie(obj.o.cookie_name, obj.o.cookie_value);
-                    if (obj.o.default_open) {
-                        show(obj);
+                    $.cookie($obj.o.cookie_name, $obj.o.cookie_value);
+                    if ($obj.o.default_open) {
+                        show($obj);
                     }
                     else {
-                        hide(obj);
+                        hide($obj);
                     }
                 }
                 
                 // Handle clicks on toggle object.
-                obj.click(function() {
-                    if ($.cookie(obj.o.cookie_name) == 'visible') {
-                        hide(obj);
+                $obj.click(function () {
+                    if ($.cookie($obj.o.cookie_name) === 'visible') {
+                        hide($obj);
                         return false;
                     }
                     else {
-                        show(obj);
+                        show($obj);
                         return false;
                     };
                 });
@@ -112,17 +114,20 @@
             
             // Not using cookies.
             else {
-                if (obj.o.default_open) { show(obj); }
-                else { hide(obj); }
+                if ($obj.o.default_open) { 
+                    show($obj);
+                } else { 
+                    hide($obj);
+                };
                 
                 // Handle clicks on toggle object.
-                obj.click(function() {
-                    if (obj.o.target.hasClass(obj.o.hide_class)) {
-                        show(obj);
+                $obj.click(function () {
+                    if ($obj.o.target.hasClass($obj.o.hide_class)) {
+                        show($obj);
                         return false;
                     }
-                    else if (obj.o.target.hasClass(obj.o.show_class)) {
-                        hide(obj);
+                    else if ($obj.o.target.hasClass($obj.o.show_class)) {
+                        hide($obj);
                         return false;
                     };
                 });
