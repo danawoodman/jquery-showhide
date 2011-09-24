@@ -1,0 +1,156 @@
+/*------------------------------------------------------------------------------
+    
+    jquery.showhide Demo Styling
+    
+    None of the sytles in this page are needed to get jquery.showhide working, 
+    they are just to make the demo page look nice...
+    
+------------------------------------------------------------------------------*/
+
+/* 
+    HTML styles for the demo
+*/
+body {
+    color: #333;
+    font: 14px "Lucida Sans Unicode", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+a {
+    color: #0050af;
+}
+a:hover {
+    background-color: #0050af;
+    color: #fff;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Cambria", Georgia, "Times New Roman", Times, serif;
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    border-bottom: 1px solid #ececec;
+    font-size: 2em;
+    margin-top: 1.75em;
+    padding-bottom: .2em;
+}
+h3 {
+    border-top: 1px dashed #DCDCDC;
+    margin-top: 2em;
+    padding-top: 2em;
+}
+
+code {
+    background: #FBFFE6;
+    padding: .1em .3em;
+}
+pre {
+    background: #D5EAF2;
+    border-left: 5px solid #C0CED5;
+    color: #2B3340;
+    font: 12px "Monaco", "Lucida Console", monospace;
+    overflow: auto;
+    padding: 10px 25px;
+}
+
+table {
+    border-left: 1px solid #F1F1F1;
+    font-size: 13px;
+    margin: 1.5em 0;
+}
+    th,
+    td {
+        padding: .2em .8em;
+        vertical-align: top;
+    }
+    td p {
+        margin-top: .5em 0;
+    }
+
+    thead th {
+        background: #383838;
+        border-bottom: 1px solid #444;
+        border-top: 1px solid #3f3f3f;
+        color: #ECECEC;
+        font-weight: bold;
+    }
+
+    tbody th, tbody td {
+        border-bottom: 1px solid #F1F1F1;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #F1F1F1;
+        border-top: 1px solid #fff;
+    }
+
+    tbody th {
+        background: #F0F0F0;
+        color: #000;
+    }
+
+
+#container {
+    margin: 2em auto;
+    padding: 0;
+    text-align: left;
+    width: 700px;
+}
+
+/*
+    Give some style to the jquery.showhide show/hide/plus/minus classes so we can see that everything is working as expected.
+*/
+.show {
+    background: #CDE1BF;
+}
+.plus, .minus {
+    font-weight: bold;
+}
+.plus:hover, .minus:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+.plus, .plus:hover {
+    color: #65820C;
+}
+.minus, .minus:hover {
+    color: #99440C;
+}
+
+
+/*
+    Style the code preview toggle and box.
+*/
+.code-view {
+    margin-top: 2em;
+}
+    .show-code {
+        color: #B8B8B8;
+        font-size: 13px;
+        font-style: italic;
+    }
+    .show-code:hover {
+        background-color: transparent;
+        color: #888;
+        text-decoration: underline;
+    }
+    .code-view div {
+        background: #FAFAFA;
+        border-bottom: 1px solid #ECECEC;
+        border-top: 1px solid #ECECEC;
+        margin: 10px 0;
+        padding: 10px 30px;
+    }
+        
+
+
+/* 
+    Hide the span in example 3 to show how jquery.showhide can handle 
+    elements that are already hidden.
+*/
+#example-3 p span {
+    display: none;
+}
