@@ -32,4 +32,4 @@ Copyright &copy; 2011 Dana Woodman <dana@danawoodman.com>
 Released under an MIT license. See the `LICENSE` file for more information.
 
 
-[demo]: https://github.com/danawoodman/jquery-showhide/blob/master/demo.html "Check out the jquery.showhide demo page"
+[demo]: http://blog.danawoodman.com/jquery-showhide/ "Check out the jquery.showhide demo page"
