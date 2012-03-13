@@ -38,7 +38,9 @@
         
         // Get the value from the cookie and set it to the shown variable.
         if ($obj.cookies_installed && $obj.o.use_cookie) {
-            shown = $.cookie($obj.o.cookie_name) === 'true' ? true : false;
+            if($.cookie($obj.o.cookie_name) != null) {
+                shown = $.cookie($obj.o.cookie_name) === 'true' ? true : false;
+            }
         };
         
         // Set the show/hide text to the current toggle text value if not set.
@@ -59,7 +61,7 @@
         update_cookie = function (val) {
             if ($obj.cookies_installed && $obj.o.use_cookie) {
                 // console.log('Updating cookie to: ' + val);
-                $.cookie($obj.o.cookie_name, val);
+                $.cookie($obj.o.cookie_name, val, {expires: $obj.o.cookie_expires});
             };
         };
         
