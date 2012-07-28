@@ -1,5 +1,7 @@
 # jquery-showhide
 
+**NOTE: this plugin is no longer maintained. Feel free to use it, fork it and send me pull requests. However, I cannot offer any support for it. At some point I'd like to rewrite it but until then...** 
+
 A robust "toggle" plugin for jQuery. Features include:
 
 - Remember the state of the target object in a cookie.
@@ -10,7 +12,7 @@ A robust "toggle" plugin for jQuery. Features include:
 
 ## Usage / Examples
 
-Check out the [demo page][demo] for installation, examples and settings reference.
+*No longer available, sorry...*
 
 
 ## Etc...
@@ -31,5 +33,3 @@ Copyright &copy; 2011 Dana Woodman <dana@danawoodman.com>
 
 Released under an MIT license. See the `LICENSE` file for more information.
 
-
-[demo]: http://blog.danawoodman.com/jquery-showhide/ "Check out the jquery.showhide demo page"
