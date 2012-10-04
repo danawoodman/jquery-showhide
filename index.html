@@ -1,261 +1,256 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        
-        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-        
-        <title>jquery.showhide.js</title>
-        
-        <!-- META tags -->
-        <meta name="description" content="jquery.showhide is jQuery's toggle() on steroids." />
-        <meta name="keywords" content="jquery,plugin,toggle,show,hide,showhide" />
-        
-        <!-- Stylesheets -->
-        <link type="text/css" rel="stylesheet" href="demo.css" media="all" />
-        
-        <!-- JavaScript -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script type="text/javascript" src="jquery.cookie.js"></script>
-        <script type="text/javascript" src="jquery.showhide.min.js"></script>
-        
-        <script type="text/javascript">
-        
-            $(function() {
-                
-                // The show code examples in the demo, you can ignore it...
-                $('.show-code').showhide({
-                    default_open: false,
-                    show_class: 'code-show',
-                    hide_class: 'code-hide',
-                    plus_class: 'code-plus',
-                    minus_class: 'code-minus',
-                    minus_text: 'Hide code'
-                });
-
-
-                //--------------------------------------------------------------
-                //  Examples
-                //--------------------------------------------------------------
-
-                $('#ex-1').showhide();
-
-                $('.ex-2').showhide({
-                    default_open: false
-                });
-
-                $('#ex-3').showhide();
-
-                $('#ex-4').showhide({
-                    target_obj: '$obj.parent().next()'
-                });
-
-                $('#ex-5').showhide({
-                    default_open: false,
-                    target_obj: '$obj.parent().next()',
-                    focus_target: '$target.find("input")[0]'
-                });
-
-                $('#ex-6').showhide({
-                    use_cookie: true,
-                    cookie_name: 'example_6'
-                });
-
-                $('.ex-7').showhide({
-                    use_cookie: true,
-                    cookie_name: 'example_7'
-                });
-
-                // Add 10 elements to the page dynamically. Just for fun...
-                var i = 10, elms = '';
-                while (i--) {
-                    elms += '<p><a href="#" title="Toggle the span" class="ex-8">Toggle for example 8</a> <span><strong>Content for example 8.</strong></span></p>';
-                };
-                $('#example-8-results').append(elms);
-                $('.ex-8').showhide();
-
-                $('#ex-9').showhide({
-                    default_open: false,
-                    minus_text: 'Hide element'
-                });
-
-                $('#ex-10').showhide({
-                    target_obj: '$("#ex-10-target")'
-                });
-                
-            });
-        
-        </script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jquery.showhide.js</title>
+    <meta name="description" content="jquery.showhide() is jQuery's .toggle() function on steroids.">
+    <link type="text/css" rel="stylesheet" href="demo.css" media="all">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
+    <script src="jquery.showhide.js"></script>
+      
+    <script type="text/javascript">
     
-    </head>
-    <body>
-        
-        <div id="container">
+        $(function() {
             
-            <header id="header">
-                <h1>jquery.showhide</h1>
-            </header>
+            // The show code examples in the demo, you can ignore it...
+            $('.show-code').showhide({
+                default_open: false,
+                show_class: 'code-show',
+                hide_class: 'code-hide',
+                plus_class: 'code-plus',
+                minus_class: 'code-minus',
+                minus_text: 'Hide code'
+            });
 
-            <nav id="toc">
-                
-                <h2>Contents</h2>
-                
-                <ol>
-                    <li><a href="#description" title="Learn about jquery.showhide">Description</a></li>
-                    <li><a href="#installation" title="Learn how to install jquery.showhide">Installation</a></li>
-                    <li><a href="#examples" title="View all examples">Examples</a>
-                        <ol>
-                            <li><a href="#example-1" title="View example 1">Basic example using ID</a></li>
-                            <li><a href="#example-2" title="View example 2">Using classes / default closed</a></li>
-                            <li><a href="#example-3" title="View example 3">Hidden target element</a></li>
-                            <li><a href="#example-4" title="View example 4">Toggling parent's next sibling</a></li>
-                            <li><a href="#example-5" title="View example 5">Auto-focus form field</a></li>
-                            <li><a href="#example-6" title="View example 6">Using a cookie</a></li>
-                            <li><a href="#example-7" title="View example 7">Using a cookie with classes</a> (not working yet...)</li>
-                            <li><a href="#example-8" title="View example 8">Dynamically added elements</a></li>
-                            <li><a href="#example-9" title="View example 9">Change toggle text</a></li>
-                            <li><a href="#example-10" title="View example 10">Toggle arbitrary element</a></li>
-                        </ol>
-                    </li>
-                    <li><a href="#settings" title="Check out all the available settings">Settings</a></li>
-                    <li><a href="#etc" title="Learn more about the plugin">Etc...</a></li>
-                </ol>
-            </nav>
+
+            //--------------------------------------------------------------
+            //  Examples
+            //--------------------------------------------------------------
+
+            $('#ex-1').showhide();
+
+            $('.ex-2').showhide({
+                default_open: false
+            });
+
+            $('#ex-3').showhide();
+
+            $('#ex-4').showhide({
+                target_obj: '$obj.parent().next()'
+            });
+
+            $('#ex-5').showhide({
+                default_open: false,
+                target_obj: '$obj.parent().next()',
+                focus_target: '$target.find("input")[0]'
+            });
+
+            $('#ex-6').showhide({
+                use_cookie: true,
+                cookie_name: 'example_6'
+            });
+
+            $('.ex-7').showhide({
+                use_cookie: true,
+                cookie_name: 'example_7'
+            });
+
+            // Add 10 elements to the page dynamically. Just for fun...
+            var i = 10, elms = '';
+            while (i--) {
+                elms += '<p><a href="#" title="Toggle the span" class="ex-8">Toggle for example 8</a> <span><strong>Content for example 8.</strong></span></p>';
+            };
+            $('#example-8-results').append(elms);
+            $('.ex-8').showhide();
+
+            $('#ex-9').showhide({
+                default_open: false,
+                minus_text: 'Hide element'
+            });
+
+            $('#ex-10').showhide({
+                target_obj: '$("#ex-10-target")'
+            });
             
-            <section id="description">
-                
-                <h2>Description</h2>
-                
-                <summary>
-                    <p><strong>jquery.showhide is jQuery's <code>toggle()</code> on steroids.</strong></p>
-                    <p>jquery.showhide offers some useful features above and beyond what is possible with <code>toggle()</code> alone:</p>
-                    <ul>
-                        <li>Remember the state of the target object in a cookie (via the <a href="https://github.com/carhartl/jquery-cookie" title="Check out the jQuery Cookie plugin">jQuery Cookie plugin</a>).</li>
-                        <li>Change the text of the toggle element (useful if you want the link text to change, e.g. "Show form"/"Hide form").</li>
-                        <li>Apply classes to the toggle element to give it plus/minus classes.</li>
-                        <li>Auto focus on a form element within the target element (useful if you are showing a hidden form).</li>
-                    </ul>
-                    <p>To learn more about jquery.showhide, check out the <a href="#examples" title="Check out the examples">examples</a> below.</p>
-                </summary>
-                
-            </section>
-            
-            <section id="installation">
+        });
+    
+    </script>
+  
+  </head>
+  <body>
+      
+      <div id="container">
+          
+          <header id="header">
+              <h1>jquery.showhide</h1>
+          </header>
 
-                <h2>Installation</h2>
+          <nav id="toc">
+              
+              <h2>Contents</h2>
+              
+              <ol>
+                  <li><a href="#description" title="Learn about jquery.showhide">Description</a></li>
+                  <li><a href="#installation" title="Learn how to install jquery.showhide">Installation</a></li>
+                  <li><a href="#examples" title="View all examples">Examples</a>
+                      <ol>
+                          <li><a href="#example-1" title="View example 1">Basic example using ID</a></li>
+                          <li><a href="#example-2" title="View example 2">Using classes / default closed</a></li>
+                          <li><a href="#example-3" title="View example 3">Hidden target element</a></li>
+                          <li><a href="#example-4" title="View example 4">Toggling parent's next sibling</a></li>
+                          <li><a href="#example-5" title="View example 5">Auto-focus form field</a></li>
+                          <li><a href="#example-6" title="View example 6">Using a cookie</a></li>
+                          <li><a href="#example-7" title="View example 7">Using a cookie with classes</a> (not working yet...)</li>
+                          <li><a href="#example-8" title="View example 8">Dynamically added elements</a></li>
+                          <li><a href="#example-9" title="View example 9">Change toggle text</a></li>
+                          <li><a href="#example-10" title="View example 10">Toggle arbitrary element</a></li>
+                      </ol>
+                  </li>
+                  <li><a href="#settings" title="Check out all the available settings">Settings</a></li>
+                  <li><a href="#etc" title="Learn more about the plugin">Etc...</a></li>
+              </ol>
+          </nav>
+          
+          <section id="description">
+              
+              <h2>Description</h2>
+              
+              <summary>
+                  <p><strong>jquery.showhide is jQuery's <code>toggle()</code> on steroids.</strong></p>
+                  <p>jquery.showhide offers some useful features above and beyond what is possible with <code>toggle()</code> alone:</p>
+                  <ul>
+                      <li>Remember the state of the target object in a cookie (via the <a href="https://github.com/carhartl/jquery-cookie" title="Check out the jQuery Cookie plugin">jQuery Cookie plugin</a>).</li>
+                      <li>Change the text of the toggle element (useful if you want the link text to change, e.g. "Show form"/"Hide form").</li>
+                      <li>Apply classes to the toggle element to give it plus/minus classes.</li>
+                      <li>Auto focus on a form element within the target element (useful if you are showing a hidden form).</li>
+                  </ul>
+                  <p>To learn more about jquery.showhide, check out the <a href="#examples" title="Check out the examples">examples</a> below.</p>
+              </summary>
+              
+          </section>
+          
+          <section id="installation">
 
-                <ol>
-                    <li>
-                        <p>Download and put jQuery and the jQuery Cookie in the <code>&lt;head&gt;</code> of your page:</p>
-                        <pre>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+              <h2>Installation</h2>
+
+              <ol>
+                  <li>
+                      <p>Download and put jQuery and the jQuery Cookie in the <code>&lt;head&gt;</code> of your page:</p>
+                      <pre>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;jquery.cookie.js&quot;&gt;&lt;/script&gt;</pre>
-                    </li>
-                    <li><a href="https://github.com/danawoodman/jquery-showhide" title="Download jquery.showhide">Download the latest release</a> of jquery.showhide from Github.</li>
-                    <li>
-                        <p>Place jquery.showhide <strong>after</strong> jQuery and jQuery Cookie:</p>
-                        <pre>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.showhide.js&quot;&gt;&lt;/script&gt;</pre>
-                    </li>
-                    <li><strong>Use it!</strong> See some usage <a href="#examples" title="Check out all the examples">examples</a> and look at the <a href="#settings" title="Check out the available settings">available settings</a>.</li>
-                </ol>
+                  </li>
+                  <li><a href="https://github.com/danawoodman/jquery-showhide" title="Download jquery.showhide">Download the latest release</a> of jquery.showhide from Github.</li>
+                  <li>
+                      <p>Place jquery.showhide <strong>after</strong> jQuery and jQuery Cookie:</p>
+                      <pre>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.showhide.js&quot;&gt;&lt;/script&gt;</pre>
+                  </li>
+                  <li><strong>Use it!</strong> See some usage <a href="#examples" title="Check out all the examples">examples</a> and look at the <a href="#settings" title="Check out the available settings">available settings</a>.</li>
+              </ol>
 
-            </section>
+              <p>
+                <em><strong>Note:</strong> It is generally a good practice to concatenate and minify your JavaScript in production environments. Compress you JavaScript here: <a href="http://jscompress.com/">http://jscompress.com/</a></em>
+              </p>
 
-            <section id="examples">
+          </section>
 
-                <h2>Examples</h2>
+          <section id="examples">
 
-                <section id="example-1">
+              <h2>Examples</h2>
 
-                    <h3>1. Basic example using ID</h3>
-                    <p>
-                        <a href="#" title="Toggle the span" id="ex-1">Toggle</a>
-                        <span><strong>This can be toggled.</strong></span>
-                    </p>
+              <section id="example-1">
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
-    <div>
+                  <h3>1. Basic example using ID</h3>
+                  <p>
+                      <a href="#" title="Toggle the span" id="ex-1">Toggle</a>
+                      <span><strong>This can be toggled.</strong></span>
+                  </p>
 
-    <h4>JavaScript</h4>
-    <pre>$('#ex-1').showhide();</pre>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+  <div>
 
-    <h4>HTML</h4>
-    <pre>&lt;p&gt;
-        &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-1&quot;&gt;Toggle&lt;/a&gt;
-        &lt;span&gt;&lt;strong&gt;This can be toggled.&lt;/strong&gt;&lt;/span&gt;
-    &lt;/p&gt;</pre>
+  <h4>JavaScript</h4>
+  <pre>$('#ex-1').showhide();</pre>
 
-    </div>
-                    </div>
+  <h4>HTML</h4>
+  <pre>&lt;p&gt;
+      &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-1&quot;&gt;Toggle&lt;/a&gt;
+      &lt;span&gt;&lt;strong&gt;This can be toggled.&lt;/strong&gt;&lt;/span&gt;
+  &lt;/p&gt;</pre>
 
-                </section>
+  </div>
+                  </div>
 
-                <section id="example-2">
+              </section>
 
-                    <h3>2. Using classes / default closed</h3>
-                    <ul>
-                        <li>
-                            <a href="#" title="Toggle the span" class="ex-2">Toggle item 1</a>
-                            <span><strong>Content for item 1.</strong></span>
-                        </li>
-                        <li>
-                            <a href="#" title="Toggle the span" class="ex-2">Toggle item 2</a>
-                            <span><strong>Content for item 2.</strong></span>
-                        </li>
-                        <li>
-                            <a href="#" title="Toggle the span" class="ex-2">Toggle item 3</a>
-                            <span><strong>Content for item 3.</strong></span>
-                        </li>
-                        <li>
-                            <a href="#" title="Toggle the span" class="ex-2">Toggle item 4</a>
-                            <span><strong>Content for item 4.</strong></span>
-                        </li>
-                    </ul>
+              <section id="example-2">
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <h3>2. Using classes / default closed</h3>
+                  <ul>
+                      <li>
+                          <a href="#" title="Toggle the span" class="ex-2">Toggle item 1</a>
+                          <span><strong>Content for item 1.</strong></span>
+                      </li>
+                      <li>
+                          <a href="#" title="Toggle the span" class="ex-2">Toggle item 2</a>
+                          <span><strong>Content for item 2.</strong></span>
+                      </li>
+                      <li>
+                          <a href="#" title="Toggle the span" class="ex-2">Toggle item 3</a>
+                          <span><strong>Content for item 3.</strong></span>
+                      </li>
+                      <li>
+                          <a href="#" title="Toggle the span" class="ex-2">Toggle item 4</a>
+                          <span><strong>Content for item 4.</strong></span>
+                      </li>
+                  </ul>
+
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>$('.ex-2').showhide({
-    default_open: false
+  default_open: false
 });</pre>
 
 <h4>HTML</h4>
 <pre>&lt;ul&gt;
-    &lt;li&gt;
-        &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 1&lt;/a&gt;
-        &lt;span&gt;&lt;strong&gt;Content for item 1.&lt;/strong&gt;&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 2&lt;/a&gt;
-        &lt;span&gt;&lt;strong&gt;Content for item 2.&lt;/strong&gt;&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 3&lt;/a&gt;
-        &lt;span&gt;&lt;strong&gt;Content for item 3.&lt;/strong&gt;&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 4&lt;/a&gt;
-        &lt;span&gt;&lt;strong&gt;Content for item 4.&lt;/strong&gt;&lt;/span&gt;
-    &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 1&lt;/a&gt;
+      &lt;span&gt;&lt;strong&gt;Content for item 1.&lt;/strong&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 2&lt;/a&gt;
+      &lt;span&gt;&lt;strong&gt;Content for item 2.&lt;/strong&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 3&lt;/a&gt;
+      &lt;span&gt;&lt;strong&gt;Content for item 3.&lt;/strong&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-2&quot;&gt;Toggle item 4&lt;/a&gt;
+      &lt;span&gt;&lt;strong&gt;Content for item 4.&lt;/strong&gt;&lt;/span&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
-                </section>
+              </section>
 
-                <section id="example-3">
+              <section id="example-3">
 
-                    <h3>3. Hidden target element</h3>
+                  <h3>3. Hidden target element</h3>
 
-                    <p>
-                        <a href="#" title="Toggle the span" id="ex-3">Toggle example 3</a>
-                        <span>Content for example 3.</span>
-                    </p>
+                  <p>
+                      <a href="#" title="Toggle the span" id="ex-3">Toggle example 3</a>
+                      <span>Content for example 3.</span>
+                  </p>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
@@ -263,29 +258,29 @@
 
 <h4>HTML</h4>
 <pre>&lt;p&gt;
-    &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-3&quot;&gt;Toggle example 3&lt;/a&gt;
-    &lt;span&gt;Content for example 3.&lt;/span&gt;
+  &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-3&quot;&gt;Toggle example 3&lt;/a&gt;
+  &lt;span&gt;Content for example 3.&lt;/span&gt;
 &lt;/p&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
-                </section>
+              </section>
 
-                <section id="example-4">
+              <section id="example-4">
 
-                    <h3>4. Toggling parent's next sibling</h3>
+                  <h3>4. Toggling parent's next sibling</h3>
 
-                    <p><a href="#" title="Toggle the div" id="ex-4">Toggle example 4</a></p>
-                    <div><strong>Content for example 4.</strong></div>
+                  <p><a href="#" title="Toggle the div" id="ex-4">Toggle example 4</a></p>
+                  <div><strong>Content for example 4.</strong></div>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>$('#ex-4').showhide({
-    target_obj: '$obj.parent().next()'
+  target_obj: '$obj.parent().next()'
 });</pre>
 
 <h4>HTML</h4>
@@ -293,149 +288,149 @@
 &lt;div&gt;&lt;strong&gt;Content for example 4.&lt;/strong&gt;&lt;/div&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
-                </section>
+              </section>
 
-                <section id="example-5">
+              <section id="example-5">
 
-                    <h3>5. Auto-focus form field</h3>
+                  <h3>5. Auto-focus form field</h3>
 
-                    <p><a href="#" title="Toggle the div" id="ex-5">Toggle example 5</a></p>
-                    <div>
-                        <form action="" method="post">
-                            <p>
-                                <input type="text" name="name" id="id_name" value="" />
-                            </p>
-                            <p>
-                                <input type="submit" value="Submit" />
-                            </p>
-                        </form>
-                    </div>
+                  <p><a href="#" title="Toggle the div" id="ex-5">Toggle example 5</a></p>
+                  <div>
+                      <form action="" method="post">
+                          <p>
+                              <input type="text" name="name" id="id_name" value="" />
+                          </p>
+                          <p>
+                              <input type="submit" value="Submit" />
+                          </p>
+                      </form>
+                  </div>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>$('#ex-5').showhide({
-    default_open: false,
-    target_obj: '$obj.parent().next()',
-    focus_target: '$target.find("input")[0]'
+  default_open: false,
+  target_obj: '$obj.parent().next()',
+  focus_target: '$target.find("input")[0]'
 });
 </pre>
 
 <h4>HTML</h4>
 <pre>&lt;p&gt;&lt;a href=&quot;#&quot; title=&quot;Toggle the div&quot; id=&quot;ex-5&quot;&gt;Toggle example 5&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;
-    &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
-        &lt;p&gt;
-            &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;id_name&quot; value=&quot;&quot; /&gt;
-        &lt;/p&gt;
-        &lt;p&gt;
-            &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
-        &lt;/p&gt;
-    &lt;/form&gt;
+  &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+      &lt;p&gt;
+          &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;id_name&quot; value=&quot;&quot; /&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+      &lt;/p&gt;
+  &lt;/form&gt;
 &lt;/div&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
-                </section>
+              </section>
 
-                <section id="example-6">
+              <section id="example-6">
 
-                    <h3>6. Using a cookie</h3>
+                  <h3>6. Using a cookie</h3>
 
-                    <p>
-                        <a href="#" title="Toggle the span" id="ex-6">Toggle example 6</a>
-                        <span><strong>Content for example 6.</strong></span>
-                    </p>
+                  <p>
+                      <a href="#" title="Toggle the span" id="ex-6">Toggle example 6</a>
+                      <span><strong>Content for example 6.</strong></span>
+                  </p>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>$('#ex-6').showhide({
-    use_cookie: true,
-    cookie_name: 'example_6'
+  use_cookie: true,
+  cookie_name: 'example_6'
 });</pre>
 
 <h4>HTML</h4>
 <pre>&lt;p&gt;
-    &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-6&quot;&gt;Toggle example 6&lt;/a&gt;
-    &lt;span&gt;&lt;strong&gt;Content for example 6.&lt;/strong&gt;&lt;/span&gt;
+  &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-6&quot;&gt;Toggle example 6&lt;/a&gt;
+  &lt;span&gt;&lt;strong&gt;Content for example 6.&lt;/strong&gt;&lt;/span&gt;
 &lt;/p&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
-                </section>
+              </section>
 
-                <section id="example-7">
+              <section id="example-7">
 
-                    <h3>7. Using a cookie with classes (not working yet...)</h3>
+                  <h3>7. Using a cookie with classes (not working yet...)</h3>
 
-                    <p>
-                        <a href="#" title="Toggle the span" class="ex-7">Toggle example 7-1</a>
-                        <span><strong>Content for example 7-1.</strong></span>
-                    </p>
-                    <p>
-                        <a href="#" title="Toggle the span" class="ex-7">Toggle example 7-2</a>
-                        <span><strong>Content for example 7-2.</strong></span>
-                    </p>
-                    <p>
-                        <a href="#" title="Toggle the span" class="ex-7">Toggle example 7-3</a>
-                        <span><strong>Content for example 7-3.</strong></span>
-                    </p>
+                  <p>
+                      <a href="#" title="Toggle the span" class="ex-7">Toggle example 7-1</a>
+                      <span><strong>Content for example 7-1.</strong></span>
+                  </p>
+                  <p>
+                      <a href="#" title="Toggle the span" class="ex-7">Toggle example 7-2</a>
+                      <span><strong>Content for example 7-2.</strong></span>
+                  </p>
+                  <p>
+                      <a href="#" title="Toggle the span" class="ex-7">Toggle example 7-3</a>
+                      <span><strong>Content for example 7-3.</strong></span>
+                  </p>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
-        <div>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+      <div>
 
 <h4>JavaScript</h4>
 <pre>$('.ex-7').showhide({
-    use_cookie: true,
-    cookie_name: 'example_7'
+  use_cookie: true,
+  cookie_name: 'example_7'
 });</pre>
 
 <h4>HTML</h4>
 <pre>&lt;p&gt;
-    &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-7&quot;&gt;Toggle example 7-1&lt;/a&gt;
-    &lt;span&gt;&lt;strong&gt;Content for example 7-1.&lt;/strong&gt;&lt;/span&gt;
+  &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-7&quot;&gt;Toggle example 7-1&lt;/a&gt;
+  &lt;span&gt;&lt;strong&gt;Content for example 7-1.&lt;/strong&gt;&lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-7&quot;&gt;Toggle example 7-2&lt;/a&gt;
-    &lt;span&gt;&lt;strong&gt;Content for example 7-2.&lt;/strong&gt;&lt;/span&gt;
+  &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-7&quot;&gt;Toggle example 7-2&lt;/a&gt;
+  &lt;span&gt;&lt;strong&gt;Content for example 7-2.&lt;/strong&gt;&lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-7&quot;&gt;Toggle example 7-3&lt;/a&gt;
-    &lt;span&gt;&lt;strong&gt;Content for example 7-3.&lt;/strong&gt;&lt;/span&gt;
+  &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; class=&quot;ex-7&quot;&gt;Toggle example 7-3&lt;/a&gt;
+  &lt;span&gt;&lt;strong&gt;Content for example 7-3.&lt;/strong&gt;&lt;/span&gt;
 &lt;/p&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
 
-                </section>
+              </section>
 
-                <section id="example-8">
+              <section id="example-8">
 
-                    <h3>8. Dynamically added elements</h3>
+                  <h3>8. Dynamically added elements</h3>
 
-                    <div id="example-8-results"></div>
+                  <div id="example-8-results"></div>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>var i = 10, // Number of items to create.
-    elms = ''; // String to contain the HTML for all the elements.
+  elms = ''; // String to contain the HTML for all the elements.
 
 while (i--) { // Create new elements.
-    elms += '&lt;p&gt;&lt;a href="#" title="Toggle the span" class="ex-8"&gt;Toggle for example 8&lt;/a&gt; &lt;span&gt;&lt;strong&gt;Content for example 8.&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;';
+  elms += '&lt;p&gt;&lt;a href="#" title="Toggle the span" class="ex-8"&gt;Toggle for example 8&lt;/a&gt; &lt;span&gt;&lt;strong&gt;Content for example 8.&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;';
 };
 
 $('#example-8-results').append(elms); // Add elements to the page.
@@ -443,56 +438,56 @@ $('#example-8-results').append(elms); // Add elements to the page.
 $('.ex-8').showhide();</pre>
 
 </div>
-                    </div>
+                  </div>
 
-                </section>
+              </section>
 
-                <section id="example-9">
+              <section id="example-9">
 
-                    <h3>9. Change toggle text</h3>
+                  <h3>9. Change toggle text</h3>
 
-                    <p>
-                        <a href="#" title="Toggle the span" id="ex-9">Show element</a>
-                        <span><strong>Content for example 9.</strong></span>
-                    </p>
+                  <p>
+                      <a href="#" title="Toggle the span" id="ex-9">Show element</a>
+                      <span><strong>Content for example 9.</strong></span>
+                  </p>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>$('#ex-9').showhide({
-    default_open: false,
-    minus_text: 'Hide element',
+  default_open: false,
+  minus_text: 'Hide element',
 });</pre>
 
 <h4>HTML</h4>
 <pre>&lt;p&gt;
-    &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-9&quot;&gt;Show element&lt;/a&gt;
-    &lt;span&gt;&lt;strong&gt;Content for example 9.&lt;/strong&gt;&lt;/span&gt;
+  &lt;a href=&quot;#&quot; title=&quot;Toggle the span&quot; id=&quot;ex-9&quot;&gt;Show element&lt;/a&gt;
+  &lt;span&gt;&lt;strong&gt;Content for example 9.&lt;/strong&gt;&lt;/span&gt;
 &lt;/p&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
 
-                </section>
+              </section>
 
-                <section id="example-10">
+              <section id="example-10">
 
-                    <h3>10. Toggle arbitrary element</h3>
+                  <h3>10. Toggle arbitrary element</h3>
 
-                    <p><a href="#" title="Toggle the span" id="ex-10">Toggle example 10</a></p>
-                    <p>Here is some irrelevant text...</p>
-                    <p id="ex-10-target">And here is some text to toggle!</p>
+                  <p><a href="#" title="Toggle the span" id="ex-10">Toggle example 10</a></p>
+                  <p>Here is some irrelevant text...</p>
+                  <p id="ex-10-target">And here is some text to toggle!</p>
 
-                    <div class="code-view">
-                        <a href="#" title="Show the code for this example" class="show-code">Show code</a>
+                  <div class="code-view">
+                      <a href="#" title="Show the code for this example" class="show-code">Show code</a>
 <div>
 
 <h4>JavaScript</h4>
 <pre>$('#ex-10').showhide({
-    target_obj: '$("#ex-10-target")'
+  target_obj: '$("#ex-10-target")'
 });
 </pre>
 
@@ -502,188 +497,188 @@ $('.ex-8').showhide();</pre>
 &lt;p id=&quot;ex-10-target&quot;&gt;And here is some text to toggle!&lt;/p&gt;</pre>
 
 </div>
-                    </div>
+                  </div>
 
 
-                </section>
+              </section>
 
-            </section>
+          </section>
 
-            <section id="settings">
+          <section id="settings">
 
-                <h2>Settings</h2>
-                <p>Below is a table of all available settings you can pass to jquery.showhide. <strong>All settings are optional</strong>.</p>
+              <h2>Settings</h2>
+              <p>Below is a table of all available settings you can pass to jquery.showhide. <strong>All settings are optional</strong>.</p>
 
-                <table id="options-table" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Option</th>
-                            <th>Default</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>cookie_expires</code></td>
-                            <td><code>365</code> (one year)</td>
-                            <td><code>Number</code></td>
-                            <td>
-                                <p>Number of days until the cookie expires.</p>
-                                <p>
-                                    <code>use_cookie</code> must be set to <code>true</code> and the 
-                                    <a href="https://github.com/carhartl/jquery-cookie" title="Check out the jQuery Cookie plugin">jQuery Cookie plugin</a> 
-                                    must be installed for cookies to work.
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>cookie_name</code></td>
-                            <td><code>'show_target'</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The name of the cookie to store. This must <strong>be unique for <em>every</em> element</strong>.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>default_open</code></td>
-                            <td><code>true</code></td>
-                            <td><code>Boolean</code></td>
-                            <td>
-                                <p>Whether or not to have the target element open open by default. This is overridden by any cookies set.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>focus_target</code></td>
-                            <td><code>null</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>
-                                    <code>focus_target</code> takes a <code>String</code> that is evaluated in order to find a field to focus 
-                                    on when showing the target element.
-                                </p>
+              <table id="options-table" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>Option</th>
+                          <th>Default</th>
+                          <th>Type</th>
+                          <th>Description</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><code>cookie_expires</code></td>
+                          <td><code>365</code> (one year)</td>
+                          <td><code>Number</code></td>
+                          <td>
+                              <p>Number of days until the cookie expires.</p>
+                              <p>
+                                  <code>use_cookie</code> must be set to <code>true</code> and the 
+                                  <a href="https://github.com/carhartl/jquery-cookie" title="Check out the jQuery Cookie plugin">jQuery Cookie plugin</a> 
+                                  must be installed for cookies to work.
+                              </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>cookie_name</code></td>
+                          <td><code>'show_target'</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The name of the cookie to store. This must <strong>be unique for <em>every</em> element</strong>.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>default_open</code></td>
+                          <td><code>true</code></td>
+                          <td><code>Boolean</code></td>
+                          <td>
+                              <p>Whether or not to have the target element open open by default. This is overridden by any cookies set.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>focus_target</code></td>
+                          <td><code>null</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>
+                                  <code>focus_target</code> takes a <code>String</code> that is evaluated in order to find a field to focus 
+                                  on when showing the target element.
+                              </p>
 
-                                <p>
-                                    You can use the variables <code>$obj</code> and <code>$target</code> which are jQuery 
-                                    objects of the toggle and target elements to help find a focus_target element, or you 
-                                    can use a jQuery selector. All the code cares about is that <strong><code>focus_target</code> 
-                                        returns a jQuery element</strong>.
-                                </p>
-                                <p>
-                                    For example, if you wanted to find the first input box within a form in your target element, you could pass in 
-                                    <code>'$target.find("input")[0]'</code>.
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>hide_class</code></td>
-                            <td><code>'hide'</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The class name to get applied to the toggle link when the target is hidden.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>minus_class</code></td>
-                            <td><code>'minus'</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The class name to get applied to the link that indicates it is contractable. Can be used to add a "minus" icon to indicate the element can be collapsed.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>minus_text</code></td>
-                            <td><code>null</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The text to show for the toggle element when the target element is shown.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>plus_class</code></td>
-                            <td><code>'plus'</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The class name to get applied to the link that indicates it is expandable. Can be used to add a "plus" icon to indicate the element can be expanded.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>plus_text</code></td>
-                            <td><code>null</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The text to show for the toggle element when the target element is hidden.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>show_class</code></td>
-                            <td><code>'show'</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>The class name to get applied to the toggle link when the target is shown.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>target_obj</code></td>
-                            <td><code>$obj.next()</code></td>
-                            <td><code>String</code></td>
-                            <td>
-                                <p>
-                                    <code>target_obj</code> takes a <code>String</code> that is evaluated in order to find 
-                                    the target element to show/hide.
-                                </p>
+                              <p>
+                                  You can use the variables <code>$obj</code> and <code>$target</code> which are jQuery 
+                                  objects of the toggle and target elements to help find a focus_target element, or you 
+                                  can use a jQuery selector. All the code cares about is that <strong><code>focus_target</code> 
+                                      returns a jQuery element</strong>.
+                              </p>
+                              <p>
+                                  For example, if you wanted to find the first input box within a form in your target element, you could pass in 
+                                  <code>'$target.find("input")[0]'</code>.
+                              </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>hide_class</code></td>
+                          <td><code>'hide'</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The class name to get applied to the toggle link when the target is hidden.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>minus_class</code></td>
+                          <td><code>'minus'</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The class name to get applied to the link that indicates it is contractable. Can be used to add a "minus" icon to indicate the element can be collapsed.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>minus_text</code></td>
+                          <td><code>null</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The text to show for the toggle element when the target element is shown.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>plus_class</code></td>
+                          <td><code>'plus'</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The class name to get applied to the link that indicates it is expandable. Can be used to add a "plus" icon to indicate the element can be expanded.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>plus_text</code></td>
+                          <td><code>null</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The text to show for the toggle element when the target element is hidden.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>show_class</code></td>
+                          <td><code>'show'</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>The class name to get applied to the toggle link when the target is shown.</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>target_obj</code></td>
+                          <td><code>$obj.next()</code></td>
+                          <td><code>String</code></td>
+                          <td>
+                              <p>
+                                  <code>target_obj</code> takes a <code>String</code> that is evaluated in order to find 
+                                  the target element to show/hide.
+                              </p>
 
-                                <p>
-                                    You can use the variable <code>$obj</code> which is a jQuery 
-                                    object of the toggle element to help find a target_obj element, or you 
-                                    can use a jQuery selector. All the code cares about is that <strong><code>target_obj</code> 
-                                    returns a jQuery element</strong>.
-                                </p>
-                                <p>
-                                    For example, if you wanted to find the most recent sibling of the toggle element's parent element, 
-                                    you would pass in <code>'$obj.parent().next()'</code>.
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>use_cookie</code></td>
-                            <td><code>false</code></td>
-                            <td><code>Boolean</code></td>
-                            <td>
-                                <p>If true, use a cookie to store the last chosen state for the target element. If false, do not use a cookie.</p>
-                                <p>Requires the <a href="https://github.com/carhartl/jquery-cookie" title="Check out the jQuery Cookie plugin">jQuery Cookie plugin</a> to work.</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                              <p>
+                                  You can use the variable <code>$obj</code> which is a jQuery 
+                                  object of the toggle element to help find a target_obj element, or you 
+                                  can use a jQuery selector. All the code cares about is that <strong><code>target_obj</code> 
+                                  returns a jQuery element</strong>.
+                              </p>
+                              <p>
+                                  For example, if you wanted to find the most recent sibling of the toggle element's parent element, 
+                                  you would pass in <code>'$obj.parent().next()'</code>.
+                              </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>use_cookie</code></td>
+                          <td><code>false</code></td>
+                          <td><code>Boolean</code></td>
+                          <td>
+                              <p>If true, use a cookie to store the last chosen state for the target element. If false, do not use a cookie.</p>
+                              <p>Requires the <a href="https://github.com/carhartl/jquery-cookie" title="Check out the jQuery Cookie plugin">jQuery Cookie plugin</a> to work.</p>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
 
-            </section>
-            
-            <section id="etc">
-                
-                <h2>Etc...</h2>
-                
-                <p><strong>Support</strong>:<br /> Need help? Found bugs? Want to shower me with praise/hate? Email me at <em>dana@danawoodman.com</em></p>
-                <p><strong>License</strong>:<br /> Released under an MIT license.</p>
-                <p><strong>Copyright</strong>:<br /> <a href="http://www.danawoodman.com" title="Check out my website">Dana Woodman</a> 2012, All Rights Reserved.</p>
-                
-            </section>
-            
-        </div>
-        
-        <script type="text/javascript">
+          </section>
+          
+          <section id="etc">
+              
+              <h2>Etc...</h2>
+              
+              <p><strong>Support</strong>:<br /> Need help? Found bugs? Want to shower me with praise/hate? Email me at <em>dana@danawoodman.com</em></p>
+              <p><strong>License</strong>:<br /> Released under an MIT license.</p>
+              <p><strong>Copyright</strong>:<br /> <a href="http://www.danawoodman.com" title="Check out my website">Dana Woodman</a> 2012, All Rights Reserved.</p>
+              
+          </section>
+          
+      </div>
+      
+      <script type="text/javascript">
 
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-599674-43']);
-          _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-599674-43']);
+        _gaq.push(['_trackPageview']);
 
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
 
-        </script>
-        
-    </body>
+      </script>
+      
+  </body>
 </html>
