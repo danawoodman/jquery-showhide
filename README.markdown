@@ -7,13 +7,20 @@ A robust "toggle" plugin for jQuery. Features include:
 - Apply classes to the toggle element to give it plus/minus styling.
 - Auto focus on a form element within the target element (useful if you are showing a hidden form).
 
-
-## Usage / Examples
-
-Check out the [demo page][demo] for installation, examples and settings reference.
+This is meant to be a more feature rich version of jQuery's `.toggle()` function for those situations where you need something with a bit more bling.
 
 
-## Etc...
+## Requirements
+
+Depends on the [jquery.cookie plugin](https://github.com/carhartl/jquery-cookie) and is tested using jQuery 1.7.2.
+
+
+## Usage
+
+**View the `demo.html` file in your browser for documentation and examples.**
+
+
+## Contribute
 
 If you would like to contribute to this project, fork the [code on GitHub](https://github.com/danawoodman/jquery-showhide) and then submit a Pull request for your changes.
 
@@ -29,7 +36,4 @@ Copyright &copy; 2011 Dana Woodman <dana@danawoodman.com>
 
 ## License
 
-Released under an MIT license. See the `LICENSE` file for more information.
-
-
-[demo]: http://blog.danawoodman.com/jquery-showhide/ "Check out the jquery.showhide demo page"
+Released under an MIT license. See the `LICENCE` file for more information.
